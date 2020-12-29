@@ -4,14 +4,20 @@
   <meta charset="utf-8">
   
   
-  <title>学习笔记</title>
+  <title>Linux学习笔记 | 学习笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="学习笔记">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="主要是一些记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习笔记">
+<meta property="og:url" content="http://example.com/2020/12/29/Linux1/index.html">
 <meta property="og:site_name" content="学习笔记">
+<meta property="og:description" content="主要是一些记录">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-29T08:08:57.444Z">
 <meta property="article:author" content="Yuuuu">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="学习笔记" type="application/atom+xml">
@@ -69,9 +75,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="页面布局（配合主题文档使用）-Linux1" class="h-entry article article-type-页面布局（配合主题文档使用）" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="页面布局（配合主题文档使用）-Linux1" class="h-entry article article-type-页面布局（配合主题文档使用）" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2020/12/29/Linux1/" class="article-date">
   <time class="dt-published" datetime="2020-12-28T16:00:00.000Z" itemprop="datePublished">2020-12-29</time>
@@ -88,8 +92,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/29/Linux1/">Linux学习笔记</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Linux学习笔记
     </h1>
   
 
@@ -622,345 +626,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="页面布局（配合主题文档使用）-Spring" class="h-entry article article-type-页面布局（配合主题文档使用）" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/25/Spring/" class="article-date">
-  <time class="dt-published" datetime="2020-12-24T16:00:00.000Z" itemprop="datePublished">2020-12-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/25/Spring/">Spring学习笔记</a>
-    </h1>
+    <a href="/2020/12/25/Spring/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Spring学习笔记</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Spring概述"><a href="#Spring概述" class="headerlink" title="Spring概述"></a>Spring概述</h1><p>Spring是一个开源框架。</p>
-<p>Spring位简化企业级用用开发而生。是哦那个Spring使简单的JavaBean实现以前只有EJB才能实现的功能。</p>
-<p>Spring是一个IOD(DI)和AOP容器框架</p>
-<p>具体描述：</p>
-<ul>
-<li>轻量级：Spring使非侵入性的-基于Spring开发的应用中的对象可以不依赖于Spring的API</li>
-<li>依赖注入（DI-dependency injection、IOC)</li>
-<li>面向切面编程（AOP-aspect oriented programming)</li>
-<li>容器：Spring是一个容器，因为它包含并且管理应用对象的声明周期</li>
-<li>框架：Spring实现了使用简单的组件配置组合成一个复杂的应用。在Spring中可以使用XML和Java注解组合这些对象</li>
-<li>一站式：在IOC和AOP的基础上可以整合各种企业应用的开源框架和优秀的第三方类库（实际上Spring自身也提供了展现层的SpringMVC和持久层的Spring JDBC)</li>
-</ul>
-<h1 id="Spring模块"><a href="#Spring模块" class="headerlink" title="Spring模块"></a>Spring模块</h1><h2 id="搭建Spring开发环境"><a href="#搭建Spring开发环境" class="headerlink" title="搭建Spring开发环境"></a>搭建Spring开发环境</h2><p>Spring的配置文件：一个典型的Spring项目需要创建一个或多个Bean配置文件，这些配置文件作用在Spring IOC容器里配置Bean。Bean的配置文件可以放在classpath下，也可以放在其他目录下。</p>
-<h2 id="IOC和DI"><a href="#IOC和DI" class="headerlink" title="IOC和DI"></a>IOC和DI</h2><p>IOC（Inversion of Control)：其思想是反转资源获取的方向。传统的资源查找方式要求组件像容器发起请求查找资源。作为回应，容器适时的返回资源。而应用了IOC之后，则是容器主动地将资源推送给它所管理的组件，组件所要做的仅是选择一种合适的方式来接受资源。这种行为也被称为查找的被动形式。</p>
-<p>DI（Dependency Injection)-IOC的另一种表述方式：即组件以一些预先定义好的方式（例如：setter方法）接受来自如容器的资源注入。相对于IOC而言，这种表述更直接。</p>
-<h2 id="IOC前生-分离接口与实现"><a href="#IOC前生-分离接口与实现" class="headerlink" title="IOC前生-分离接口与实现"></a>IOC前生-分离接口与实现</h2><p>需求：生成HTML或PDF格式的不同类型的报表</p>
-<h2 id="IOC前生-采用工厂设计模式"><a href="#IOC前生-采用工厂设计模式" class="headerlink" title="IOC前生-采用工厂设计模式"></a>IOC前生-采用工厂设计模式</h2><h2 id="IOC-采用反转控制"><a href="#IOC-采用反转控制" class="headerlink" title="IOC-采用反转控制"></a>IOC-采用反转控制</h2><h1 id="Spring容器"><a href="#Spring容器" class="headerlink" title="Spring容器"></a>Spring容器</h1><p>在Spring IOC容器读取Bean配置创建Bean实例之前，必须对它进行实例化。只有在容器实例化后，才可以从IOC容器李获取Bean实例并使用。</p>
-<p>Spring提供了两种类型的IOC容器实现。</p>
-<p>BeanFactory：IOC容器的基本实现</p>
-<p>ApplicationContext：提供了更多的高级特性。是BeanFactory的子接口。</p>
-<p>BeanFactory是Spring框架的基础设施，面向Spring本身；ApplicationContext面向使用Spring框架的开发者，几乎所有的应用场合都直接使用ApplicationContext而非底层的BeanFactory。无论使用何种方式，配置文件时相同的。</p>
-<h2 id="ApplicationContext"><a href="#ApplicationContext" class="headerlink" title="ApplicationContext"></a>ApplicationContext</h2><p>ApplicationContext的主要实现类：</p>
-<p>ClassPathXmlApplicationContext：从类路径下加载配置文件</p>
-<p>FileSystemXmlApplicationContext：从文件系统中加载配置文件</p>
-<p>ConfigurableApplicationContext 扩展于 ApplicationContext，新增加两个主要方法：refresh() 和 close()， 让 ApplicationContext 具有启动、刷新和关闭上下文的能力。</p>
-<p>ApplicationContext 在初始化上下文时就实例化所有单例的 Bean。</p>
-<p>WebApplicationContext 是专门为 WEB 应用而准备的，它允许从相对于 WEB 根目录的路径中完成初始化工作。</p>
-<h3 id="从IOC容器中获取Bean"><a href="#从IOC容器中获取Bean" class="headerlink" title="从IOC容器中获取Bean"></a>从IOC容器中获取Bean</h3><p>调用ApplicationContext的getBean()方法</p>
-<h3 id="依赖注入的方式"><a href="#依赖注入的方式" class="headerlink" title="依赖注入的方式"></a>依赖注入的方式</h3><p>Spring支持3中依赖注入的方式</p>
-<ol>
-<li>属性注入</li>
-<li>构造器注入</li>
-<li>工厂方法注入（很少使用，不推荐）</li>
-</ol>
-<h4 id="属性注入"><a href="#属性注入" class="headerlink" title="属性注入"></a>属性注入</h4><p>属性注入即通过setter方法注入Bean的属性值或依赖对象</p>
-<p>属性注入使用<property>元素，使用name属性指定Bean的属性名称，value属性或<value>子标签指定属性值</p>
-<p>属性注入时实际应用中最常用的注入方式</p>
-<h4 id="构造方法注入"><a href="#构造方法注入" class="headerlink" title="构造方法注入"></a>构造方法注入</h4><p>通过构造方法注入Bean的属性值或依赖的对象，它保证了Bean实例在实例化后就可以使用。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/25/Spring/" data-id="ckj3lx6c50000r4vf7iluasl4" data-title="Spring学习笔记" class="article-share-link">Teilen</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="页面布局（配合主题文档使用）-MarkDown学习记录" class="h-entry article article-type-页面布局（配合主题文档使用）" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/22/MarkDown%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2020-12-21T16:00:00.000Z" itemprop="datePublished">2020-12-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/22/MarkDown%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">markdown语法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><ul>
-<li>1</li>
-<li>2</li>
-</ul>
-<ol>
-<li>1</li>
-<li>2</li>
-</ol>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><blockquote>
-<p>古藤老树昏鸦</p>
-<p>小桥流水人家</p>
-</blockquote>
-<h1 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h1><p><a target="_blank" rel="noopener" href="http://baidu.com/">Baidu</a></p>
-<p><img src=""></p>
-<h1 id="粗体与斜体"><a href="#粗体与斜体" class="headerlink" title="粗体与斜体"></a>粗体与斜体</h1><p><strong>粗体</strong></p>
-<p><em>斜体</em></p>
-<p><code>print</code></p>
-<p><code>sssdfadsfasdfasdfasdf </code></p>
-<hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">| Tables        | Are           | Cool  |</span><br><span class="line">	| ------------- |:-------------:| -----:|</span><br><span class="line">	| col 3 is      | right-aligned | $1600 |</span><br><span class="line">	| col 2 is      | centered      |   $12 |</span><br><span class="line">	| zebra stripes | are neat      |    $1 |</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/22/MarkDown%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" data-id="ckizvnvv60000wsvf2ypugtvh" data-title="markdown语法" class="article-share-link">Teilen</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="页面布局（配合主题文档使用）-SSM" class="h-entry article article-type-页面布局（配合主题文档使用）" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/22/SSM/" class="article-date">
-  <time class="dt-published" datetime="2020-12-21T16:00:00.000Z" itemprop="datePublished">2020-12-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/22/SSM/">SSM学习笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="SSM整合"><a href="#SSM整合" class="headerlink" title="SSM整合"></a>SSM整合</h1><p>整合的思路是：</p>
-<ul>
-<li><p>先创建spring框架</p>
-</li>
-<li><p>通过spring整合spring mvc</p>
-</li>
-<li><p>通过spring整合mybatis</p>
-</li>
-</ul>
-<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/22/SSM/" data-id="ckizvwknv0000ygvf383u18ft" data-title="SSM学习笔记" class="article-share-link">Teilen</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSM/" rel="tag">SSM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="页面布局（配合主题文档使用）-算法四" class="h-entry article article-type-页面布局（配合主题文档使用）" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/21/%E7%AE%97%E6%B3%95%E5%9B%9B/" class="article-date">
-  <time class="dt-published" datetime="2020-12-20T16:00:00.000Z" itemprop="datePublished">2020-12-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/21/%E7%AE%97%E6%B3%95%E5%9B%9B/">算法四学习笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="算法四"><a href="#算法四" class="headerlink" title="算法四"></a>算法四</h1><h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><h2 id="基础编程模型"><a href="#基础编程模型" class="headerlink" title="基础编程模型"></a>基础编程模型</h2><ul>
-<li>程序是对算法精确、优雅和完全的描述</li>
-<li>可以通过运行程序来学习算法的各种性值</li>
-<li>可以在应用程序中直接使用这些算法</li>
-</ul>
-<p>基础编程模型：描述和实现算法所用到的语言特性、软件库和操作系统特性总称</p>
-<h3 id="Java程序的基本结构"><a href="#Java程序的基本结构" class="headerlink" title="Java程序的基本结构"></a>Java程序的基本结构</h3><ul>
-<li>原始数据类型：在计算机程序中精确地定义整数、浮点数和布尔值等。定义包括取值范围和能都对相应的值进行的操作，能够被组合为类似于数学公式定义的表达式。</li>
-<li>语句：语句通过创建变量并对其赋值、控制运行流程或者引发副作用来进行计算。使用六种语句：声明、赋值、条件、循环、调用和返回。</li>
-<li>数组：数组是多个同种数据类型的值的集合。</li>
-<li>静态方法：静态方法可以封装并重用代码，使我们可以用独立的模块开发程序</li>
-<li>字符串：字符串是一连串的字符，Java内置了对它们的一些操作</li>
-<li>标准输入/输出：标准输入输出是程序与外界联系的桥梁</li>
-<li>数据抽象：数据抽象封装和重用代码，使我们可以定义非原始数据类型，进而支持面向对象编程。</li>
-</ul>
-<h3 id="原始数据类型与表达式"><a href="#原始数据类型与表达式" class="headerlink" title="原始数据类型与表达式"></a>原始数据类型与表达式</h3><ul>
-<li>整型，及其算术运算符(int);</li>
-<li>浮点型，及其算术运算符(double)</li>
-<li>布尔型，他的值{true,false}及其逻辑操作(boolean)</li>
-<li>字符型，它的值是你能够输入的英文字母数字字符和符号(char)</li>
-</ul>
-<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><p>运算符*和/（以及%）的优先级高于+和-</p>
-<p>在逻辑运算符中，!拥有最高优先级，之后是&amp;&amp;，接下来是||。</p>
-<p>一般来说，相同优先级的运算符的运算顺序是从左至右。</p>
-<p>括号能改变这些规则</p>
-<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>如果不会损失信息，数值会被自动提升为高级的数据类型。</p>
-<h4 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h4><p>下列运算符能够比较相同数据类型的两个值并产生一个布尔值：相等（==）、不等（!=）、小于（&lt;）,小于等于（&lt;=）、大于（&gt;）和大于等于（&gt;=)。这些运算符被称为混合类型运算符，因为它们的结果是布尔型，而不是参与比较的数据类型。结果是布尔型的表达式被称为布尔表达式。我们将会看到这种表达式是条件语句和循环语句的重要组成部分。</p>
-<h4 id="其他原始类型"><a href="#其他原始类型" class="headerlink" title="其他原始类型"></a>其他原始类型</h4><p>64位整数，及其算术运算符（long）</p>
-<p>16位整数，及其算术运算符（short）</p>
-<p>16位字符，及其算术运算符（char)</p>
-<p>8  位整数，及其算术运算符（byte)</p>
-<p>32位单精度实数，及其算数运算符（float)</p>
-<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><ul>
-<li>声明语句</li>
-<li>赋值语句</li>
-<li>条件语句</li>
-<li>循环语句</li>
-<li>调用和返回语句</li>
-</ul>
-<h2 id="数据抽象"><a href="#数据抽象" class="headerlink" title="数据抽象"></a>数据抽象</h2>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/21/%E7%AE%97%E6%B3%95%E5%9B%9B/" data-id="ckixwjdos0000x4vfh4eraqur" data-title="算法四学习笔记" class="article-share-link">Teilen</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%9B%9B/" rel="tag">算法四</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2020/12/15/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2020-12-15T10:42:39.697Z" itemprop="datePublished">2020-12-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2020/12/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/15/hello-world/" data-id="ckipuyi7z00001wvf7etg91b6" data-title="Hello World" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
