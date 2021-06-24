@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Java日期时间APIJava8以前日期时间API存在的问题java.util.Date java.util.Calendar java.util.GregoriranCalendar java.text.SimpleDateFormat 这四个类有的问题：  非线程安全：这四大类都不是线程安全的。 设计不佳：一方面日期和日期格式化分布在多个包中；另一方面，java.util.Date的默认日期为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Yuuuu的学习小站">
+<meta property="og:url" content="http://example.com/2021/06/24/Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API/index.html">
+<meta property="og:site_name" content="Yuuuu的学习小站">
+<meta property="og:description" content="Java日期时间APIJava8以前日期时间API存在的问题java.util.Date java.util.Calendar java.util.GregoriranCalendar java.text.SimpleDateFormat 这四个类有的问题：  非线程安全：这四大类都不是线程安全的。 设计不佳：一方面日期和日期格式化分布在多个包中；另一方面，java.util.Date的默认日期为">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-24T06:52:17.465Z">
+<meta property="article:modified_time" content="2021-03-29T06:18:17.840Z">
+<meta property="article:author" content="Yuuuu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/06/24/Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-cn'
+  };
+</script>
+
+  <title> | Yuuuu的学习小站</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Cambiar a barra de navegación">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Yuuuu的学习小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Inicio</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archivo</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/24/Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yuuuu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Yuuuu的学习小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Publicado el</span>
+
+              <time title="Creado por: 2021-06-24 14:52:17" itemprop="dateCreated datePublished" datetime="2021-06-24T14:52:17+08:00">2021-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Editado el</span>
+                <time title="Modificado por: 2021-03-29 14:18:17" itemprop="dateModified" datetime="2021-03-29T14:18:17+08:00">2021-03-29</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Java日期时间API"><a href="#Java日期时间API" class="headerlink" title="Java日期时间API"></a>Java日期时间API</h1><h2 id="Java8以前日期时间API存在的问题"><a href="#Java8以前日期时间API存在的问题" class="headerlink" title="Java8以前日期时间API存在的问题"></a>Java8以前日期时间API存在的问题</h2><p>java.util.Date</p>
+<p>java.util.Calendar</p>
+<p>java.util.GregoriranCalendar</p>
+<p>java.text.SimpleDateFormat</p>
+<p>这四个类有的问题：</p>
+<ol>
+<li>非线程安全：这四大类都不是线程安全的。</li>
+<li>设计不佳：一方面日期和日期格式化分布在多个包中；另一方面，java.util.Date的默认日期为1970年1月1日，没有统一性。而且Date类也缺少之恶杰操作日期的相关方法</li>
+<li>时区处理困难：因为设计不佳，开发人员不得不编写大量代码来处理时区问题</li>
+<li>还有其他一些问题，如Calendar类月份从零开始计算</li>
+</ol>
+<p>面对这些问题，Java 8重新设计了所有日期时间、日历以及时区相关的API。并把它们都统一放置在java.time包和子包下，并作出了以下改进：</p>
+<ol>
+<li>新的日期时间API是线程安全的，不仅没有setter方法，而且任何对实力的变更都会返回一个新的实例，保证原来的实例不变，</li>
+<li>新的日期时间API提供了大量的方法，用于修改日期时间的各个部分，并返回一个新的实例</li>
+<li>借鉴了第三方日期时间库joda很多的优点</li>
+<li>在时区方面，新的日期时间API引入了域这个概念</li>
+</ol>
+<p>同时Java8 还针对原来复杂的API进行重新组合和拆分，分成了好多个类。</p>
+<h2 id="关于时间和时区"><a href="#关于时间和时区" class="headerlink" title="关于时间和时区"></a>关于时间和时区</h2><h3 id="GMT和UTC"><a href="#GMT和UTC" class="headerlink" title="GMT和UTC"></a>GMT和UTC</h3><p>==GMT==，即格林尼治标准时间，也就是世界时。GMT的正午是指当太阳横穿格林尼治子午线（本初子午线）时的时间。但由于地球自转不均匀不规则，导致GMT不精确，现在已经不再作为世界标准时间使用。</p>
+<p>==UTC==，即协调世界时。是经过平均太阳时、地球运动修正以后的新时标，以【秒】为单位的国际原子时所综合精算而成的时间。为确保UTC与GMT相差不归超过0.9秒，在有需要的情况下例如 (<code>1998-12-31T23:59:60Z</code>）会在UTC内加上正或负闰秒。协调世界时区会使用 “Z” 来表示，协调世界时也会被称为 “Zulu time”。UTC现在作为世界标准时间使用。</p>
+<p>所以，UTC与GMT基本上等同，误差不超过0.9秒。不过日常使用中，GMT与UTC的功能与精确度没有差别。</p>
+<h3 id="时区"><a href="#时区" class="headerlink" title="时区"></a>时区</h3><p>时区作为地理概念，表示“遵守同一时间标准的一个地区”。</p>
+<p>使用与UTC的偏移来表示时区，例如：中国所在时区为UTC+8:00（又称为Chinese Standard Time，即”中国标准时间“）</p>
+<p>地球自西向东旋转，东边比西边先看到太阳，东边的时间也比西边的早。为了统一世界的时间，1884年的国际经度会议规规定将全球划分为24个时区（东、西各12个时区）。规定英国（格林尼治天文台旧址）为零时区（基准 UTC），东1-12区，西1-12区，中国北京处于东8区（UTC+08:00），那么我们的时间会领先基准-也就是我们在早上 9 点时，伦敦是早上 1 点。</p>
+<h3 id="Unix时间戳"><a href="#Unix时间戳" class="headerlink" title="Unix时间戳"></a>Unix时间戳</h3><p>计算机中的Unix时间戳，使用自1970-01-01T00:00:00Z（Z即表示UTC时间）至今的毫秒差作为表示时间的数值，并且移除期间的“闰秒”（例如1998-12-31T23:59:60Z），这么做当然是为了简化计算机对时间操作的复杂度。Unix时间体系中，每天固定86400秒，这个时间时绝对公立的，它和时区没有任何关系。</p>
+<h3 id="Java中的Unix时间"><a href="#Java中的Unix时间" class="headerlink" title="Java中的Unix时间"></a>Java中的Unix时间</h3><p>Java确保：每天24小事、每小时60分、每分钟60秒。</p>
+<p>Java中获取“当前”时间的方法，其底层实现，全部由java.lang.System.currentTimeMills()提供子UTC 1970-01-01T00:00:00的毫秒数。java.lang.System.currentMills()作为native方法，其实现与JVM所在的及其相关（通常使用NTP协议保持更新）。</p>
+<h3 id="LocalDate、LocalTime、LocalDateTime"><a href="#LocalDate、LocalTime、LocalDateTime" class="headerlink" title="LocalDate、LocalTime、LocalDateTime"></a>LocalDate、LocalTime、LocalDateTime</h3><p>java.time.LocalDate 用于表示“本地日期”，无”时间“。不承载时区信息。</p>
+<p>java.time.LocalTime 用于表示”本地时间“，无”日期“。不承载时区信息。</p>
+<p>java.time.LocalDateTime 用于表示”本地日期与时间“。不承载时区信息。</p>
+<p>LocalDate 实例与 LocalTime 实例能够工通构建 LocalDateTime 实例，由LocalDateTime 实例能够获取 LocalDate 实例与 LocalTime 实例。</p>
+<p>由于 LocalDateTime 不承载时区信息，因此，其不能与 Instant 相互转换，必须提供时区信息</p>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="获取对象的方法"><a href="#获取对象的方法" class="headerlink" title="获取对象的方法"></a>获取对象的方法</h4><ol>
+<li>通过静态方法：now() 获取的时间时系统当前的时间</li>
+<li>通过静态方法：of() 方法参数可以指定时间</li>
+</ol>
+<h4 id="与获取相关的方法（get系类的方法）"><a href="#与获取相关的方法（get系类的方法）" class="headerlink" title="与获取相关的方法（get系类的方法）"></a>与获取相关的方法（get系类的方法）</h4><ul>
+<li>getYear()：获取年</li>
+<li>getHour()：获取小时</li>
+<li>getMinute()：获取分钟</li>
+<li>getSecond()：获取秒</li>
+<li>getDayOfMonth()：获取月份天数（1-31）</li>
+<li>getDayOfYear()：获取年份天数（1-366）</li>
+<li>getDayOfWeek()：获取星期几（返回一个DayOfWeek枚举值）</li>
+<li>getMonth()：获得月份（返回一个DayOfWeek枚举类）</li>
+<li>getMonthValue()：获得月份（1-12）</li>
+<li>getYear()：获得年份</li>
+</ul>
+<h4 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h4><ul>
+<li>toLocalDate()：将LocalDateTime转换为相应的LocalDate对象</li>
+<li>toLocalTime()：将LocalDateTime转换为相应的LocalTime对象</li>
+</ul>
+<h4 id="判断方法"><a href="#判断方法" class="headerlink" title="判断方法"></a>判断方法</h4><ul>
+<li>isAfter()：判断一个日期是否在指定日期之后</li>
+<li>isBefore()：判断一个日期是否在指定日期之前</li>
+<li>isEqual()：判断两个日期是否相同</li>
+<li>isLeapYear()：判断是否闰年</li>
+</ul>
+<h4 id="增加年月日时分秒的方法"><a href="#增加年月日时分秒的方法" class="headerlink" title="增加年月日时分秒的方法"></a>增加年月日时分秒的方法</h4><ul>
+<li>plusYears(int offset)：增加指定年份</li>
+<li>plusMonths(int offset)：增加指定月份</li>
+<li>plusWeeks(int offset)：增加指定周</li>
+<li>PlusDates(int offset)：增加指定日</li>
+<li>plustHours(int offset)：增加指定时</li>
+<li>plusMinuets(int offset)：增加指定分</li>
+<li>plusSeconds(int offset)：增加指定秒</li>
+<li>plusNanos(int offset)：增加指定纳秒</li>
+</ul>
+<h4 id="减少年月日时分秒的方法"><a href="#减少年月日时分秒的方法" class="headerlink" title="减少年月日时分秒的方法"></a>减少年月日时分秒的方法</h4><ul>
+<li>minusYears(int offset)：增加指定年份</li>
+<li>minusMonths(int offset)：增加指定月份</li>
+<li>minusWeeks(int offset)：增加指定周</li>
+<li>minusDates(int offset)：增加指定日</li>
+<li>minusHours(int offset)：增加指定时</li>
+<li>minusMinuets(int offset)：增加指定分</li>
+<li>minusSeconds(int offset)：增加指定秒</li>
+<li>minusNanos(int offset)：增加指定纳秒</li>
+</ul>
+<h4 id="指定年月日时分秒的方法"><a href="#指定年月日时分秒的方法" class="headerlink" title="指定年月日时分秒的方法"></a>指定年月日时分秒的方法</h4><ul>
+<li>with(TemporalAdjuster adjuster)：指定特殊时间</li>
+<li>withYear(int year)：指定年</li>
+<li>withDayOfYear(int dayOfyear)：指定日</li>
+<li>withMonth(int month)：指定月</li>
+<li>withDayOfMonth(int dayOfMonth)：指定日</li>
+</ul>
+<h4 id="将日期格式化字符串的方法"><a href="#将日期格式化字符串的方法" class="headerlink" title="将日期格式化字符串的方法"></a>将日期格式化字符串的方法</h4><ul>
+<li>format()：格式化字符串</li>
+</ul>
+<h4 id="解析字符串为日期时间的方法"><a href="#解析字符串为日期时间的方法" class="headerlink" title="解析字符串为日期时间的方法"></a>解析字符串为日期时间的方法</h4><ul>
+<li>paser(String str)：将一个日期字符串解析成日期对象，注意字符串日期的写法的格式要正确，否则解析失败</li>
+<li>paser(String str,DateTimeFormatter formatter)：将字符串按照参数传入的格式进行解析</li>
+</ul>
+<h4 id="TemporalAdjuster接口-时间调节器"><a href="#TemporalAdjuster接口-时间调节器" class="headerlink" title="TemporalAdjuster接口-时间调节器"></a>TemporalAdjuster接口-时间调节器</h4><p>前面看到的所有日期操作都是相对比较直接的。有的时候，需要进行一些更加灵活复杂的操作，比如，将日期调整到下个周日，下个工作日，或者是本月的最后一天。这时，就需要时间调节器TemporalAdjuster，可以更加灵活地处理日期。TemporalAdjusters工具提供了一些通用的功能，并且还可以新增自己的功能。</p>
+<h4 id="Duration类-用于计算两个”时间“间隔的类"><a href="#Duration类-用于计算两个”时间“间隔的类" class="headerlink" title="Duration类 - 用于计算两个”时间“间隔的类"></a>Duration类 - 用于计算两个”时间“间隔的类</h4><p>Duration表示一个时间段，Duration包含两部分：seconds表示秒，nanos表示纳秒，它们的组合表达了时间长度。</p>
+<p>因为Duration表示时间段你，所以Duration类中不包含now()静态方法。注意，Duration不包含毫秒这个属性。</p>
+<p>Duration只能处理LocalTime、LocalDateTime、ZonedDateTime；如果传入的是LocalDate，将会抛出异常。</p>
+<ul>
+<li>静态方法between()：计算两个时间的间隔，默认是秒</li>
+<li>toDays()：将时间转换为以天为单位的</li>
+<li>toHours()：将时间转换为以时为单位的</li>
+<li>toMinutes()：将时间转换为以分钟为单位的</li>
+<li>toMillis()：将时间转换为以毫秒为单位的</li>
+<li>toNanos()：将时间转换为AXC现场A西安市阿斯顿CQE      以纳秒为单位的</li>
+</ul>
+<h4 id="Period类-由于计算两个”日期“间隔的类"><a href="#Period类-由于计算两个”日期“间隔的类" class="headerlink" title="Period类 - 由于计算两个”日期“间隔的类"></a>Period类 - 由于计算两个”日期“间隔的类</h4><p>Period 在概念上和 Duration 类似，区别在于 Period 是以年月日来衡量一个时间段。Duration 用于计算两个时间间隔，Period 用于计算两个日期间隔，所以 between() 方法只能接收 LocalDate 类型的参数。</p>
+<ul>
+<li>静态方法between()：计算两个日期之间的间隔</li>
+<li>getYears()：获取年份</li>
+<li>getMonths()：获取月份</li>
+<li>getDays()：获取天数</li>
+</ul>
+<h4 id="Instant-时间戳类"><a href="#Instant-时间戳类" class="headerlink" title="Instant 时间戳类"></a>Instant 时间戳类</h4><p>java.time.Instant 时间线上的一个瞬时点，承载纳秒级精度的Unix时间戳，其StringtoString() 方法基于ISO-8601进行格式化。不承载时区信息。</p>
+<p>==获取对象的方法==：now()：注意默认获取出来的时默认时区，和我们相差八个小时（因为我们在东八时区）</p>
+<p>设置偏移量的方法：atOffset()</p>
+<p>获取系统默认时区时间的方法：atZone()：方法的参数是要一个时区的编号（可以通过时区编号类后哦去ZonedDateTime类的对象）</p>
+<p>==get系列的方法==</p>
+<ul>
+<li>getEpochSecond：获取从1970-01-01 00:00:00到当前时间的秒值</li>
+<li>toEpochMilli()：获取从1970-01-01 00:00:00到当前时间的毫秒值</li>
+<li>getNano()：把获取到的当前时间的秒数换算成纳秒</li>
+</ul>
+<p>==ofEpoch系列方法==</p>
+<ul>
+<li>ofEpochSecond()：给计算机元年增加秒数</li>
+<li>ofEpochMilli()：给计算机元年增加毫秒数</li>
+</ul>
+<h4 id="Clock-时钟系统"><a href="#Clock-时钟系统" class="headerlink" title="Clock - 时钟系统"></a>Clock - 时钟系统</h4><p>Clock 是始终系统，用于查找当前时刻。可以用它来获取某个时区下当前的日期或者时间。可以用来替代旧的System.currentTimeMillis()与TimeZone.getDefault()方法。</p>
+<h4 id="ZonedDate、ZonedTime、ZonedDateTime-带时区的日期时间类"><a href="#ZonedDate、ZonedTime、ZonedDateTime-带时区的日期时间类" class="headerlink" title="ZonedDate、ZonedTime、ZonedDateTime - 带时区的日期时间类"></a>ZonedDate、ZonedTime、ZonedDateTime - 带时区的日期时间类</h4><p>这三个类方法及用法和LocalDate、LocalTime、LocalDateTime基本一样。只不过这三个待用特定时区。</p>
+<h4 id="Zoneld-世界时区类"><a href="#Zoneld-世界时区类" class="headerlink" title="Zoneld - 世界时区类"></a>Zoneld - 世界时区类</h4><p>Java 使用Zoneld来标识不同的时区。时区从基准UTC开始的一个固定偏移。Zoneld的子类ZoneOffset，代表了这种从轮伦敦格林尼治零度子午线开始的时间偏移，也就是时差。</p>
+<p>常用API：</p>
+<ul>
+<li>getAvailableZonelds()：获取世界各个地方的时区的集合</li>
+<li>systemDefault：获取系统默认 时区的ID</li>
+<li>of(String zoneName)：根据各个地区的时区ID名创建对象</li>
+</ul>
+<h4 id="DateTimeFormatter-用于解析日期字符串和格式化日期输出"><a href="#DateTimeFormatter-用于解析日期字符串和格式化日期输出" class="headerlink" title="DateTimeFormatter - 用于解析日期字符串和格式化日期输出"></a>DateTimeFormatter - 用于解析日期字符串和格式化日期输出</h4><p>DateTimeFormatter用于解析日期字符串和格式化日期输出，创建格式化器最简单的方法是通过DateTimeFormatter的静态工厂方法以及常量。</p>
+<p>在Java8之前进行时间格式主要是使用SimpleDateFormat，而在Java8中，主要是使用DateTimeFormatter，Java8中，预定义了一些标准的时间格式，可以直接将时间转换为标准的时间格式。</p>
+<h4 id="常用API"><a href="#常用API" class="headerlink" title="常用API"></a>常用API</h4><ul>
+<li>ofPattern(“yyyy-MM-dd”)：静态方法，通过给定格式获取对象</li>
+<li>format()：把一个日期对象的默认格式格式化成指定的格式的字符串</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/12/29/Linux1/" rel="prev" title="Linux学习笔记">
+      <i class="fa fa-chevron-left"></i> Linux学习笔记
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Tabla de contenidos
+        </li>
+        <li class="sidebar-nav-overview">
+          Inicio
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API"><span class="nav-number">1.</span> <span class="nav-text">Java日期时间API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java8%E4%BB%A5%E5%89%8D%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">Java8以前日期时间API存在的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%B6%E5%8C%BA"><span class="nav-number">1.2.</span> <span class="nav-text">关于时间和时区</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GMT%E5%92%8CUTC"><span class="nav-number">1.2.1.</span> <span class="nav-text">GMT和UTC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%8C%BA"><span class="nav-number">1.2.2.</span> <span class="nav-text">时区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unix%E6%97%B6%E9%97%B4%E6%88%B3"><span class="nav-number">1.2.3.</span> <span class="nav-text">Unix时间戳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%AD%E7%9A%84Unix%E6%97%B6%E9%97%B4"><span class="nav-number">1.2.4.</span> <span class="nav-text">Java中的Unix时间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LocalDate%E3%80%81LocalTime%E3%80%81LocalDateTime"><span class="nav-number">1.2.5.</span> <span class="nav-text">LocalDate、LocalTime、LocalDateTime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.</span> <span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">获取对象的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8E%E8%8E%B7%E5%8F%96%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88get%E7%B3%BB%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%89"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">与获取相关的方法（get系类的方法）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.3.</span> <span class="nav-text">转换方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.4.</span> <span class="nav-text">判断方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%A7%92%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.5.</span> <span class="nav-text">增加年月日时分秒的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%8F%E5%B0%91%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%A7%92%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.6.</span> <span class="nav-text">减少年月日时分秒的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%A7%92%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.7.</span> <span class="nav-text">指定年月日时分秒的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.8.</span> <span class="nav-text">将日期格式化字符串的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%BA%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.6.9.</span> <span class="nav-text">解析字符串为日期时间的方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TemporalAdjuster%E6%8E%A5%E5%8F%A3-%E6%97%B6%E9%97%B4%E8%B0%83%E8%8A%82%E5%99%A8"><span class="nav-number">1.2.6.10.</span> <span class="nav-text">TemporalAdjuster接口-时间调节器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Duration%E7%B1%BB-%E7%94%A8%E4%BA%8E%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E2%80%9D%E6%97%B6%E9%97%B4%E2%80%9C%E9%97%B4%E9%9A%94%E7%9A%84%E7%B1%BB"><span class="nav-number">1.2.6.11.</span> <span class="nav-text">Duration类 - 用于计算两个”时间“间隔的类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Period%E7%B1%BB-%E7%94%B1%E4%BA%8E%E8%AE%A1%E7%AE%97%E4%B8%A4%E4%B8%AA%E2%80%9D%E6%97%A5%E6%9C%9F%E2%80%9C%E9%97%B4%E9%9A%94%E7%9A%84%E7%B1%BB"><span class="nav-number">1.2.6.12.</span> <span class="nav-text">Period类 - 由于计算两个”日期“间隔的类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Instant-%E6%97%B6%E9%97%B4%E6%88%B3%E7%B1%BB"><span class="nav-number">1.2.6.13.</span> <span class="nav-text">Instant 时间戳类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Clock-%E6%97%B6%E9%92%9F%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.2.6.14.</span> <span class="nav-text">Clock - 时钟系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZonedDate%E3%80%81ZonedTime%E3%80%81ZonedDateTime-%E5%B8%A6%E6%97%B6%E5%8C%BA%E7%9A%84%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB"><span class="nav-number">1.2.6.15.</span> <span class="nav-text">ZonedDate、ZonedTime、ZonedDateTime - 带时区的日期时间类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Zoneld-%E4%B8%96%E7%95%8C%E6%97%B6%E5%8C%BA%E7%B1%BB"><span class="nav-number">1.2.6.16.</span> <span class="nav-text">Zoneld - 世界时区类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DateTimeFormatter-%E7%94%A8%E4%BA%8E%E8%A7%A3%E6%9E%90%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F%E8%BE%93%E5%87%BA"><span class="nav-number">1.2.6.17.</span> <span class="nav-text">DateTimeFormatter - 用于解析日期字符串和格式化日期输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8API"><span class="nav-number">1.2.6.18.</span> <span class="nav-text">常用API</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yuuuu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">entradas</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categorías</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuuuu</span>
+</div>
+  <div class="powered-by">Creado mediante <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
