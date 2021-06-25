@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+    <meta charset="utf-8" />
 
-<link rel="stylesheet" href="/css/main.css">
+    
 
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="主要是一些记录">
+    
+    <title>Linux学习笔记 | Yuuuu的学习小站</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="学习笔记,Linux" />
+    
+    <meta name="description" content="主要是一些记录">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux学习笔记">
 <meta property="og:url" content="http://example.com/2020/12/29/Linux1/index.html">
@@ -33,174 +25,192 @@
 <meta property="article:tag" content="学习笔记">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+    
 
-<link rel="canonical" href="http://example.com/2020/12/29/Linux1/">
+    
+        <link rel="alternate" href="/" title="Yuuuu的学习小站" type="application/atom+xml" />
+    
+
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/titillium-web/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-cn'
-  };
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Inici</a>
+                                </li>
+                            
+                                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></li></ul>
+                                
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">Quant a</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Cercar" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'categories',
+            TAGS: 'etiquetes',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
 
-  <title>Linux学习笔记 | Yuuuu的学习小站</title>
-  
+<script src="/js/insight.js"></script>
 
 
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+</header>
 
-  <div class="site-meta">
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+    </h1>
+</div>
 
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Yuuuu的学习小站</h1>
-      <span class="logo-line-after"><i></i></span>
+                        <div class="main-body-content">
+                            <article id="页面布局（配合主题文档使用）-Linux1" class="article article-single article-type-页面布局（配合主题文档使用）" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Linux学习笔记
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2020/12/29/Linux1/" class="article-date">
+       <time datetime="2020-12-28T16:00:00.000Z" itemprop="datePublished">2020-12-29</time>
     </a>
   </div>
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2020/12/29/Linux1/" class="article-date">
+     <time datetime="2020-12-29T08:08:57.444Z" itemprop="dateModified">2020-12-29</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="tag-link-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a>
     </div>
-  </div>
-</div>
 
+                
 
+                
 
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content post posts-expand">
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
             
 
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-cn">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/12/29/Linux1/">
+            
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yuuuu">
-      <meta itemprop="description" content="">
-    </span>
+            
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Yuuuu的学习小站">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          Linux学习笔记
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">نُشر في</span>
-              
-
-              <time title="أُنشأ: 2020-12-29 00:00:00 / عُدل: 16:08:57" itemprop="dateCreated datePublished" datetime="2020-12-29T00:00:00+08:00">2020-12-29</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">في</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">学习笔记</span></a>
-                </span>
-            </span>
-
-          
-            <div class="post-description">主要是一些记录</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <h1 id="Linux学习"><a href="#Linux学习" class="headerlink" title="Linux学习"></a>Linux学习</h1><h2 id="Linux学习简介"><a href="#Linux学习简介" class="headerlink" title="Linux学习简介"></a>Linux学习简介</h2><p>Linux英文解释为Lunux is not Unix</p>
+            <h1 id="Linux学习"><a href="#Linux学习" class="headerlink" title="Linux学习"></a>Linux学习</h1><h2 id="Linux学习简介"><a href="#Linux学习简介" class="headerlink" title="Linux学习简介"></a>Linux学习简介</h2><p>Linux英文解释为Lunux is not Unix</p>
 <h2 id="Linux简介"><a href="#Linux简介" class="headerlink" title="Linux简介"></a>Linux简介</h2><p>Linux内核最初石油芬兰人Lunus Torvalds在赫尔辛基大学上学时编写的。</p>
 <p>Linux是一套免费试用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统</p>
 <p>Linux能运行主要的Unix工具软件、应用程序和网络协议。它七尺32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。</p>
@@ -713,200 +723,466 @@
 <p>中科大的yum源，安装方法查看：<a target="_blank" rel="noopener" href="https://lug.ustc.edu.cn/wiki/mirrors/help/centos">https://lug.ustc.edu.cn/wiki/mirrors/help/centos</a></p>
 <p>sohu的yum源安装方法查看: <a target="_blank" rel="noopener" href="https://mirrors.sohu.com/help/centos.html">http://mirrors.sohu.com/help/centos.html</a></p>
 
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"># 学习笔记</a>
-              <a href="/tags/Linux/" rel="tag"># Linux</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/12/25/Spring/" rel="prev" title="Spring学习笔记">
-      <i class="fa fa-chevron-left"></i> Spring学习笔记
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/06/24/Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API/" rel="next" title="Java8时间日期">
-      Java8时间日期 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
+        </div>
+        <footer class="article-footer">
+            
 
 
 
-          </div>
-          
-
+    <a data-url="http://example.com/2020/12/29/Linux1/" data-id="ckq97joog000s3ovfauz8b7cz" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
 </script>
 
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Yuuuu"
+        },
+        "headline": "Linux学习笔记",
+        "image": "http://example.com",
+        "keywords": "学习笔记 Linux",
+        "genre": "学习笔记",
+        "datePublished": "2020-12-29",
+        "dateCreated": "2020-12-29",
+        "dateModified": "2020-12-29",
+        "url": "http://example.com/2020/12/29/Linux1/",
+        "description": "Linux学习Linux学习简介Linux英文解释为Lunux is not Unix
+Linux简介Linux内核最初石油芬兰人Lunus Torvalds在赫尔辛基大学上学时编写的。
+Linux是一套免费试用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统
+Linux能运行主要的Unix工具软件、应用程序和网络协议。它七尺32位和6",
+        "wordCount": 2408
+    }
+</script>
 
-  <aside class="sidebar">
-    <div class="sidebar-inner">
+</article>
 
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          المحتويات
-        </li>
-        <li class="sidebar-nav-overview">
-          عام
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">Linux学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%AD%A6%E4%B9%A0%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">Linux学习简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%AE%80%E4%BB%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Linux简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88"><span class="nav-number">1.2.1.</span> <span class="nav-text">Linux的发行版</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="nav-number">1.2.2.</span> <span class="nav-text">Linux应用领域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux%E4%B8%8EWindows"><span class="nav-number">1.2.3.</span> <span class="nav-text">Linux与Windows</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%AE%89%E8%A3%85"><span class="nav-number">1.3.</span> <span class="nav-text">Linux安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">1.4.</span> <span class="nav-text">Linux系统启动过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.5.</span> <span class="nav-text">Linux系统目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">Linux忘记密码的解决方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86"><span class="nav-number">1.7.</span> <span class="nav-text">Linux远程登陆</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AF%86%E9%92%A5%E8%AE%A4%E8%AF%81%E6%9C%BA%E5%88%B6%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86Linux"><span class="nav-number">1.7.1.</span> <span class="nav-text">使用密钥认证机制远程登陆Linux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E4%BB%B6%E5%9F%BA%E6%9C%AC%E5%B1%9E%E6%80%A7"><span class="nav-number">1.8.</span> <span class="nav-text">Linux文件基本属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux%E6%96%87%E4%BB%B6%E5%B1%9E%E4%B8%BB%E5%92%8C%E5%B1%9E%E7%BB%84"><span class="nav-number">1.8.1.</span> <span class="nav-text">Linux文件属主和属组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="nav-number">1.8.2.</span> <span class="nav-text">更改文件属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-chgrp%EF%BC%9A%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E7%BB%84"><span class="nav-number">1.8.2.1.</span> <span class="nav-text">1.chgrp：更改文件属组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-chown%EF%BC%9A%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E4%B8%BB%EF%BC%8C%E4%B9%9F%E5%8F%AF%E4%BB%A5%E5%90%8C%E6%97%B6%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%B1%9E%E7%BB%84"><span class="nav-number">1.8.2.2.</span> <span class="nav-text">2.chown：更改文件属主，也可以同时更改文件属组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-chmod%EF%BC%9A%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B69%E4%B8%AA%E5%B1%9E%E6%80%A7"><span class="nav-number">1.8.2.3.</span> <span class="nav-text">3.chmod：更改文件9个属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E7%B1%BB%E5%9E%8B%E6%94%B9%E5%8F%98%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-number">1.8.2.3.1.</span> <span class="nav-text">符号类型改变文件权限</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E6%96%87%E4%BB%B6%E4%BA%8E%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86"><span class="nav-number">1.9.</span> <span class="nav-text">Linux文件于目录管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E7%9B%AE%E5%BD%95%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.10.</span> <span class="nav-text">处理目录的常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ls-%E5%88%97%E5%87%BA%E7%9B%AE%E5%BD%95"><span class="nav-number">1.10.1.</span> <span class="nav-text">ls (列出目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cd-%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95"><span class="nav-number">1.10.2.</span> <span class="nav-text">cd (切换目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pwd-%E6%98%BE%E7%A4%BA%E7%9B%AE%E5%89%8D%E6%89%80%E5%9C%A8%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-number">1.10.3.</span> <span class="nav-text">pwd (显示目前所在的目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mkdir-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="nav-number">1.10.4.</span> <span class="nav-text">mkdir (创建新目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rmdir-%E5%88%A0%E9%99%A4%E7%A9%BA%E7%9A%84%E7%9B%AE%E5%BD%95"><span class="nav-number">1.10.5.</span> <span class="nav-text">rmdir (删除空的目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cp-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="nav-number">1.10.6.</span> <span class="nav-text">cp (复制文件或目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rm-%E7%A7%BB%E9%99%A4%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"><span class="nav-number">1.10.7.</span> <span class="nav-text">rm (移除文件或目录)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mv-%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%EF%BC%8C%E6%88%96%E4%BF%AE%E6%94%B9%E5%90%8D%E7%A7%B0"><span class="nav-number">1.10.8.</span> <span class="nav-text">mv (移动文件与目录，或修改名称)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E6%9F%A5%E7%9C%8B"><span class="nav-number">1.11.</span> <span class="nav-text">Linux 文件内容查看</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cat"><span class="nav-number">1.11.1.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tac"><span class="nav-number">1.11.2.</span> <span class="nav-text">tac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nl"><span class="nav-number">1.11.3.</span> <span class="nav-text">nl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#more"><span class="nav-number">1.11.4.</span> <span class="nav-text">more</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less"><span class="nav-number">1.11.5.</span> <span class="nav-text">less</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head"><span class="nav-number">1.11.6.</span> <span class="nav-text">head</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tail"><span class="nav-number">1.11.7.</span> <span class="nav-text">tail</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86"><span class="nav-number">1.12.</span> <span class="nav-text">Linux用户和用户组管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">1.12.1.</span> <span class="nav-text">1.系统用户账号的管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E4%BD%BF%E7%94%A8useradd%E5%91%BD%E4%BB%A4%EF%BC%8C%E5%85%B6%E8%AF%AD%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">1.12.1.1.</span> <span class="nav-text">1.1添加新的用户账号使用useradd命令，其语法如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2%E5%88%A0%E9%99%A4%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.12.1.2.</span> <span class="nav-text">1.2删除账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3%E4%BF%AE%E6%94%B9%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.12.1.3.</span> <span class="nav-text">1.3修改账号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-4-%E7%94%A8%E6%88%B7%E5%8F%A3%E4%BB%A4%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">1.12.1.4.</span> <span class="nav-text">1.4 用户口令的管理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Linux%E7%B3%BB%E7%BB%9F%E7%94%A8%E6%88%B7%E7%BB%84%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">1.12.2.</span> <span class="nav-text">2.Linux系统用户组的管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%8E%E7%94%A8%E6%88%B7%E8%B4%A6%E5%8F%B7%E6%9C%89%E5%85%B3%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%96%87%E4%BB%B6"><span class="nav-number">1.12.3.</span> <span class="nav-text">3.与用户账号有关的系统文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%89%B9%E9%87%8F%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="nav-number">1.12.4.</span> <span class="nav-text">4.批量添加用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"><span class="nav-number">1.13.</span> <span class="nav-text">Linux磁盘管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LInux-vi-vim"><span class="nav-number">1.14.</span> <span class="nav-text">LInux vi&#x2F;vim</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E6%9C%89%E7%9A%84-Unix-Like-%E7%B3%BB%E7%BB%9F%E9%83%BD%E4%BC%9A%E5%86%85%E5%BB%BA-vi-%E6%96%87%E4%B9%A6%E7%BC%96%E8%BE%91%E5%99%A8%EF%BC%8C%E5%85%B6%E4%BB%96%E7%9A%84%E6%96%87%E4%B9%A6%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%99%E4%B8%8D%E4%B8%80%E5%AE%9A%E4%BC%9A%E5%AD%98%E5%9C%A8%E3%80%82"><span class="nav-number">1.15.</span> <span class="nav-text">所有的 Unix Like 系统都会内建 vi 文书编辑器，其他的文书编辑器则不一定会存在。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-yum%E5%91%BD%E4%BB%A4"><span class="nav-number">1.16.</span> <span class="nav-text">Linux yum命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#yum-%E8%AF%AD%E6%B3%95"><span class="nav-number">1.16.1.</span> <span class="nav-text">yum 语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yum%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.17.</span> <span class="nav-text">yum常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-1"><span class="nav-number">1.17.1.</span> <span class="nav-text">实例 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-2"><span class="nav-number">1.17.2.</span> <span class="nav-text">实例 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%BE%8B-3"><span class="nav-number">1.17.3.</span> <span class="nav-text">实例 3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BD%E5%86%85-yum-%E6%BA%90"><span class="nav-number">1.18.</span> <span class="nav-text">国内 yum 源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.18.1.</span> <span class="nav-text">安装步骤</span></a></li></ol></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Yuuuu</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+    <section id="comments">
+    
         
-          <span class="site-state-item-count">7</span>
-          <span class="site-state-item-name">المقالات</span>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>seguir:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-stack-overflow"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2021/06/24/Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">més nou</strong>
+        <p class="article-nav-title">
+        
+            Java8时间日期
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/12/25/Spring/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">antic</strong>
+        <p class="article-nav-title">Spring学习笔记</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">الوسوم</span></a>
-      </div>
-  </nav>
-</div>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/06/24/Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p>
+                            <p class="item-title"><a href="/2021/06/24/Java%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4API/" class="title">Java8时间日期</a></p>
+                            <p class="item-date"><time datetime="2021-06-23T16:00:00.000Z" itemprop="datePublished">2021-06-24</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/29/Linux1/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p>
+                            <p class="item-title"><a href="/2020/12/29/Linux1/" class="title">Linux学习笔记</a></p>
+                            <p class="item-date"><time datetime="2020-12-28T16:00:00.000Z" itemprop="datePublished">2020-12-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/25/Spring/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p>
+                            <p class="item-title"><a href="/2020/12/25/Spring/" class="title">Spring学习笔记</a></p>
+                            <p class="item-date"><time datetime="2020-12-24T16:00:00.000Z" itemprop="datePublished">2020-12-25</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/22/MarkDown%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p>
+                            <p class="item-title"><a href="/2020/12/22/MarkDown%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="title">markdown语法</a></p>
+                            <p class="item-date"><time datetime="2020-12-21T16:00:00.000Z" itemprop="datePublished">2020-12-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/12/22/SSM/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></p>
+                            <p class="item-title"><a href="/2020/12/22/SSM/" class="title">SSM学习笔记</a></p>
+                            <p class="item-date"><time datetime="2020-12-21T16:00:00.000Z" itemprop="datePublished">2020-12-22</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span class="category-list-count">6</span></li></ul>
+        </div>
+    </div>
 
 
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">arxius</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/06/">六月 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">十二月 2020</a><span class="archive-list-count">6</span></li></ul>
+        </div>
+    </div>
 
-      </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">etiquetes</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Date/" rel="tag">Date</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSM/" rel="tag">SSM</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/" rel="tag">Spring</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/" rel="tag">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95%E5%9B%9B/" rel="tag">算法四</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">etiqueta cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Date/" style="font-size: 10px;">Date</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/SSM/" style="font-size: 10px;">SSM</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E7%AE%97%E6%B3%95%E5%9B%9B/" style="font-size: 10px;">算法四</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2021 Yuuuu</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
 
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
+    
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://example.com/2020/12/29/Linux1/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
 
 
-      </div>
-    </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
+
+
+    
         
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
 
         
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Yuuuu</span>
-</div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
-  </div>
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
 
         
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+
+    
+    
+    
 
 
 
+<!-- Custom Scripts -->
 
+<script src="/js/main.js"></script>
 
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
 
 </body>
 </html>
